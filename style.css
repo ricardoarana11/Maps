@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.container__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0078cd;
+  height: 32px;
+  padding: 12px 0;
+  width: calc(100% + 2px);
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+.map {
+  width: 100%;
+}
