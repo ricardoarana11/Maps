@@ -1,32 +1,45 @@
-<style>
-  .container {
-  width: 100%;
-  position: relative;
-}
+<html>
+<head>
+    <meta charset=”UTF-8″ />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onLoad="createClock()">
 
-.container__title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #0078cd;
-  height: 32px;
-  padding: 12px 0;
-  width: calc(100% + 2px);
-  text-align: center;
-  font-size: 25px;
-  color: white;
-  font-family: "Lato", Arial, Helvetica, sans-serif;
-}
-
-.map {
-  width: 100%;
-}
-</style>
-
-<div class="container">
-  <div class="container__title">
-    Bloqueos en Cali hoy
+  <div class="container">
+    <div class="container__title">
+      <p>Bloqueos en Cali hoy</p><p id="clock"></p>
+    </div>
+      <iframe class="map" src="https://www.google.com/maps/d/u/0/embed?mid=1kuzB9cRvAAkCiR42Or5agDG3O56DjNaN" 
+       height="480"></iframe>
   </div>
-    <iframe class="map" src="https://www.google.com/maps/d/u/0/embed?mid=1kuzB9cRvAAkCiR42Or5agDG3O56DjNaN" 
-     height="480"></iframe>
-</div>
+
+  <script type="text/javascript">
+
+    function createClock() {
+      var now = new Date();
+      var h = now.getHours();
+      var m = now.getMinutes();
+      var s = now.getSeconds();
+
+      m = checkHour(m);
+      s = checkHour(s);
+      document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+
+      var t = setTimeOut(function() { 
+        createClock()
+      },
+      1000
+      );
+
+      function checkHour (i) {
+        if (i < 10) { i = "0" + i};
+        return i;
+      }
+
+    }
+  </script>
+</body>
+</html>
+
+
+
