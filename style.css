@@ -4,6 +4,9 @@
 }
 
 .container__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -19,4 +22,8 @@
 
 .map {
   width: 100%;
+}
+
+#clock {
+  padding-left: 10px;
 }
