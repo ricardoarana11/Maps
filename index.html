@@ -19,11 +19,9 @@
       var now = new Date();
       var h = now.getHours();
       var m = now.getMinutes();
-      var s = now.getSeconds();
 
       m = checkHour(m);
-      s = checkHour(s);
-      document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+      document.getElementById('clock').innerHTML = h + ":" + m;
 
       var t = setTimeOut(function() { 
         createClock()
